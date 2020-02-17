@@ -1,0 +1,28 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "burger devourer app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEQP/burger.git"
+  },
+  "keywords": [
+    "mysql",
+    "javascript",
+    "MVC"
+  ],
+  "author": "James Pearce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JEQP/burger/issues"
+  },
+  "homepage": "https://github.com/JEQP/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

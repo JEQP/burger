@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+
+#madeburgers{
+    width: 40%;
+
+}
+
+#eatenburgers{
+    width: 40%;
+    float: left;
+}
