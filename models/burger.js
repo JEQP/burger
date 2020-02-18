@@ -1,32 +1,30 @@
 var orm = require('../config/orm.js');
 //cb is the callback function. It is what gets the restul from orm
 var burger = {
-    selectAll: function(cb){
+    selectAll: function (cb) {
         console.log("selectAll called");
-        orm.selectAll("burgers", function(res) {
+        orm.selectAll("burgers", function (res) {
             console.log("res returned to burger.js");
             cb(res);
-          });
+        });
 
     },
 
-    insertOne: function(burger_name, cb){
+    insertOne: function (burger_name, cb) {
         console.log("insertOne called");
-        orm.insertOne("burgers", burger_name, 0, function(res){
-console.log("result returned to insertOne");
-cb(res);
+        orm.insertOne("burgers", burger_name, 0, function (res) {
+            console.log("result returned to insertOne");
+            cb(res);
         })
+    },
+
+
+    updateOne: function (devoured, condition, cb) {
+        orm.updateOne("burgers", devoured, condition, function (res) {
+            cb(res);
+        });
     }
-//     insertOne: function(paramas){
-// orm.insertOne(burger_name, function(res){
-//     something something
-// });
-//     },
-//     updateOne: function(params){
-//         orm.updateOne(burger_eaten, function(res){
-// something something
-//         });
-//     }
+
 };
 
 module.exports = burger;

@@ -29,17 +29,18 @@ var orm = {
         );
     },
 
-    updateOne: function(burger_eaten){
-        var queryString = "UPDATE burgers SET ? WHERE ?";
+    updateOne: function(tableInput, devoured, condition, cb){
+        var queryString = "UPDATE " + tableInput + " SET ? WHERE ?";
         connection.query(queryString, [{
-            devoured: 1
+            devoured: devoured
         },
         {
-            burger_name: burger_eaten
+            id: condition
         }
         ], function(err, result){
             if (err) throw err;
-            console.log(result);
+            console.log("queryString: " + queryString);
+            cb(result);
         })
     }
   };
