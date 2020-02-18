@@ -1,22 +1,32 @@
-var connection = require('connection.js');
+var connection = require('./connection');
 
 
 var orm = {
-    // not sure what this is for
-    selectAll: function(tableInput, colToSearch, valOfCol) {
-      var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-      connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
+    // This populates the webpage with data from DB
+    selectAll: function(tableInput, cb) {
+        console.log("orm select all called");
+      var queryString = "SELECT * FROM " + tableInput +";";
+      connection.query(queryString, function(err, result) {
         if (err) throw err;
         console.log(result);
+        cb(result);
       });
     },
 
-    insertOne: function (burger_name){
-        var queryString = "INSERT INTO burgers ? ?";
-        connection.query(queryString, [burger_name, 0], function(err, result){
+    insertOne: function (tableInput, burger_name, devoured, cb){
+        var queryString = "INSERT INTO " + tableInput+" SET ?";
+        // console.log("querystring: " + queryString);
+        // console.log("burger: " + burger_name + " devoured: "+ devoured);
+        connection.query(queryString, {
+            burger_name: burger_name,
+            devoured: devoured
+        }, 
+        function(err, result){
             if (err) throw err;
-            console.log(result);
-        })
+            console.log("affected rows: " + result.affectedRows);
+            cb(result);
+        }
+        );
     },
 
     updateOne: function(burger_eaten){

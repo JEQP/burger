@@ -3,14 +3,20 @@
 <h1>Eat-Da-Burger</h1>
 <div id="madeburgers">
 <ul>
-    <li>Test Burger</li>
-    <li>2nd Burger</li>
+    {{#each burgers}}
+    {{#unless devoured}}
+
+    {{/unless}}
+  {{/each}}
 </ul>
 </div>
 <div id="eatenburgers">
 <ul>
-    <li>Devoured</li>
-    <li>Eaten</li>
+    {{#each burgers}}
+    {{#if devoured}}
+      
+    {{/if}}
+  {{/each}}
 </ul>
 </div>
 <form class="create-form">

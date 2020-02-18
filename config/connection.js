@@ -11,12 +11,11 @@ var connection = mysql.createConnection({
 
     // Your password
     password: "AggleRock",
-    database: "employeetracker"
+    database: "burgers_db"
 });
 
 connection.connect(function (err) {
     if (err) throw err;
-    startPage();
 });
 
 

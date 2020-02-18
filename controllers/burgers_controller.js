@@ -3,18 +3,24 @@ var burger = require("../models/burger.js");
 var router = express.Router();
 
 router.get("/", function (req, res) {
+    console.log("get called");
     burger.selectAll(function (data) {
-        function here
-        res.render("index", SOMETHING);
+        console.log(data);
+        var hbsObject = {
+            burger: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
 });
 
-router.post("/", function (req, res) {
-    burger.insertOne(["burger_name"], [burger_name], function (result) {
+    router.post("/", function (req, res) {
+    burger.insertOne([req.body.order], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
 });
+
 
 router.put("/:id", function (req, res) {
     var condition = "id = " + req.params.id;
@@ -36,5 +42,6 @@ router.put("/:id", function (req, res) {
         }
     );
 });
+
 
 module.exports = router;
