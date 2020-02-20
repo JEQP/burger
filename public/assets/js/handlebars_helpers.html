@@ -1,0 +1,16 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+<script id="text-template" type="text/x-handlebars-template">
+    {{list}}
+</script>
+
+<script>
+Handlebars.registerHelper("list", function(context, options) {
+  var ret = "<ul>";
+
+  for (var i = 0, j = context.length; i < j; i++) {
+    ret = ret + "<li>" + options.fn(context[i]) + "</li>";
+  }
+
+  return ret + "</ul>";
+});
+</script>

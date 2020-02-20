@@ -1,13 +1,45 @@
+body {
+    background-color: bisque;
+}
+
 h1 {
     text-align: center;
 }
 
+.container{
+    background-color: gold;
+    width: 95%;
+    align-content: center;
+    height: auto;
+    min-height: 100px;
+    border: darkmagenta;
+    border-width: 5px;
+}
+
 #madeburgers{
-    width: 40%;
+    background-color: cornflowerblue;
+    /* float: left; */
+    width: 90%;
 
 }
 
 #eatenburgers{
-    width: 40%;
-    float: left;
+    background-color: deeppink;
+    /* float: left; */
+    width: 90%;
 }
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    }
+
+.form-group{
+    width: 80%;
+    /* align-content: center; */
+    }
+
+    textarea{
+        width: 100%;
+    }

@@ -4,7 +4,7 @@ var burger = {
     selectAll: function (cb) {
         console.log("selectAll called");
         orm.selectAll("burgers", function (res) {
-            console.log("res returned to burger.js");
+            console.log("res returned");
             cb(res);
         });
 

@@ -1,33 +1,52 @@
-
-
 <h1>Eat-Da-Burger</h1>
-<div id="madeburgers">
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
+{{!-- <div class="container clearfix"> --}}
+  {{!-- name of array being passed  --}}
+  <div class="container px-xs-0 px-md-2 clearfix">
+    <div class="row">
+      <div class="col-sm">
+        {{#each burger}}
+        {{!-- devoured, burger_name are keys, whose values will be expressed in the each loop --}}
+        {{#unless devoured}}
+        <div id="madeburgers" class="clearfix">
+          <ul>
+            {{!-- with links, if public folder is registered you can't include it in the file path --}}
+            {{burger_name}} <img src="assets/mouth.png" alt="mouth" height="50" width="33" class="devourmouth" id={{id}}> 
+          </ul>
+        </div>
+        {{/unless}}
+        {{/each}}
+      </div>
 
-    {{/unless}}
-  {{/each}}
-</ul>
-</div>
-<div id="eatenburgers">
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-      
-    {{/if}}
-  {{/each}}
-</ul>
-</div>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="ca"></label>
-    <input type="text" id="order" name="name">
+      <div class="col-sm">
+        {{#each burger}}
+        {{#if devoured}}
+        <div id="eatenburgers" class="clearfix">
+          <ul>
+            {{burger_name}} 
+          </ul>
+        </div>
+      </div>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      {{!-- <div class="container clearfix"> --}}
+        <form class="create-form">
+
+          <div class="form-group">
+            <label for="ca"></label>
+            <textarea rows="3" type="text" id="order" name="name"></textarea>
+          </div>
+      {{!-- </div> --}}
+    </div>
   </div>
 
-  
 
   <button type="submit">Order Burger</button>
-</form>
-Describe a burger you wish to eat and hit the button!
+  </form>
+  Describe a burger you wish to eat and hit the button!
+  {{!-- </div> --}}
