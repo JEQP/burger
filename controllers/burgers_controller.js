@@ -5,17 +5,20 @@ var router = express.Router();
 router.get("/", function (req, res) {
     console.log("get called");
     burger.selectAll(function (data) {
-        console.log(data);
+        // console.log(data);
         var hbsObject = {
             burger: data
         };
-        console.log(hbsObject);
+        // console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
     router.post("/", function (req, res) {
-    burger.insertOne([req.body.order], function (result) {
+        console.log("req.body: " + JSON.stringify(req.body));
+        console.log("burger_name: " + req.body.burger_name);
+        let burger_name = req.body.burger_name;
+    burger.insertOne([burger_name], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });

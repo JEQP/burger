@@ -20,6 +20,7 @@ h1 {
     background-color: cornflowerblue;
     /* float: left; */
     width: 90%;
+    text-align: right;
 
 }
 
@@ -35,7 +36,13 @@ h1 {
     clear: both;
     }
 
+.create-form{
+    background-color: hotpink;
+    text-align: center;
+}
+
 .form-group{
+    margin: auto;
     width: 80%;
     /* align-content: center; */
     }
