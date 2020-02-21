@@ -7,4 +7,7 @@ INSERT INTO burgers (burger_name, devoured)
 VALUES ("Aussie Works Burger", 0);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Sausage Burger", 0);
+VALUES ("Sausage Sizzle Burger", 0);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Sideways Sloppy Joe", 0);

@@ -1,3 +1,4 @@
+
 body {
     
     background-image: url('../burgerbackground.png');
@@ -8,6 +9,7 @@ body {
 
 h1 {
     text-align: center;
+    font-family: 'Trade Winds', serif;
 }
 
 .container{
@@ -25,13 +27,14 @@ h1 {
     /* float: left; */
     width: 90%;
     text-align: right;
-
+    font-family: 'Lobster', serif;
 }
 
 #eatenburgers{
     /* background-color: deeppink; */
     /* float: left; */
     width: 90%;
+    font-family: 'Butcherman', serif;
 }
 
 .clearfix::after {
@@ -43,14 +46,17 @@ h1 {
 .create-form{
     /* background-color: hotpink; */
     text-align: center;
+    font-family: 'Russo One', serif;
 }
 
 .form-group{
     margin: auto;
     width: 80%;
+    
     /* align-content: center; */
     }
 
     textarea{
         width: 100%;
+        font-family: 'Russo One', serif;
     }

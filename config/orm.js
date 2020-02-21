@@ -39,7 +39,7 @@ var orm = {
         }
         ], function(err, result){
             if (err) throw err;
-            console.log("queryString: " + queryString);
+            // console.log("queryString: " + queryString);
             cb(result);
         })
     }

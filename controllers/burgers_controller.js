@@ -1,6 +1,7 @@
 var express = require("express");
 var burger = require("../models/burger.js");
 var router = express.Router();
+const { check, validationResult } = require('express-validator');
 
 router.get("/", function (req, res) {
     console.log("get called");
@@ -13,16 +14,21 @@ router.get("/", function (req, res) {
         res.render("index", hbsObject);
     });
 });
-// max chars accepted by db is 70. Put in an error catcher here. 
-router.post("/", function (req, res) {
-    console.log("req.body: " + JSON.stringify(req.body));
-    console.log("burger_name: " + req.body.burger_name);
-    var burger_name = "";
-    if (req.body.burger_name.length > 70) {
-        res.json({success: false});
-        
+// max chars accepted by db is 70. Error catcher is express-validator
+router.post("/", 
+[
+    check('burger_name').isLength({ max: 70 }), // this sets up the check of the value in the parentheses, with the condition.
+], 
+function (req, res) {
+    // console.log('burger_name: ' + burger_name);
+    const errors = validationResult(req); // this carries out the check set up earlier.
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() }); // returns an error in the console log, but doesn't break the server.
     }
-    else if (req.body.burger_name.includes("suicide")) {
+    // console.log("burger_name: " + req.body.burger_name);
+    var burger_name = "";
+
+    if (req.body.burger_name.toLowerCase().includes("suicide")) {
         burger_name = "Epstein didn't kill himself.";
     }
     else {
@@ -38,7 +44,7 @@ router.post("/", function (req, res) {
 router.put("/:id", function (req, res) {
     var condition = req.params.id;
 
-    console.log("condition", condition);
+    // console.log("condition", condition);
 
     burger.updateOne(
         1,
