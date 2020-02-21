@@ -25,3 +25,5 @@ app.use(routes);
 app.listen(PORT, function() {
   console.log("App now listening at localhost:" + PORT);
 });
+
+// images in public domain, from http://www.clker.com/clipart-646435.html, https://www.pdclipart.org/, http://getyourimage.club/resize-20-february.html

@@ -1,6 +1,7 @@
 <h1>Eat-Da-Burger</h1>
 {{!-- <div class="container clearfix"> --}}
 {{!-- name of array being passed  --}}
+
 <div class="container px-xs-0 px-md-2 clearfix">
   <div class="row">
     <div class="col-sm">
@@ -23,7 +24,7 @@
       {{#if devoured}}
       <div id="eatenburgers" class="clearfix">
         <ul>
-          {{burger_name}}
+         <img src="assets/plate.png" alt="plate" height="30" width="100" class="devourmouth" id={{id}}> {{burger_name}}
         </ul>
       </div>
       {{/if}}

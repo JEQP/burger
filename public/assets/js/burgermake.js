@@ -43,6 +43,7 @@ console.log("newBurger: " + JSON.stringify(newBurger));
   $.ajax("/", {
     type: "POST",
     data: newBurger
+    
   }).then(
     function () {
       console.log("created new burger");

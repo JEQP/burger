@@ -1,5 +1,9 @@
 body {
-    background-color: bisque;
+    
+    background-image: url('../burgerbackground.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    /* background-color: bisque; */
 }
 
 h1 {
@@ -7,7 +11,7 @@ h1 {
 }
 
 .container{
-    background-color: gold;
+    /* background-color: gold; */
     width: 95%;
     align-content: center;
     height: auto;
@@ -17,7 +21,7 @@ h1 {
 }
 
 #madeburgers{
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     /* float: left; */
     width: 90%;
     text-align: right;
@@ -25,7 +29,7 @@ h1 {
 }
 
 #eatenburgers{
-    background-color: deeppink;
+    /* background-color: deeppink; */
     /* float: left; */
     width: 90%;
 }
@@ -37,7 +41,7 @@ h1 {
     }
 
 .create-form{
-    background-color: hotpink;
+    /* background-color: hotpink; */
     text-align: center;
 }
 

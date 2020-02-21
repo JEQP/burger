@@ -13,11 +13,21 @@ router.get("/", function (req, res) {
         res.render("index", hbsObject);
     });
 });
-
-    router.post("/", function (req, res) {
-        console.log("req.body: " + JSON.stringify(req.body));
-        console.log("burger_name: " + req.body.burger_name);
-        let burger_name = req.body.burger_name;
+// max chars accepted by db is 70. Put in an error catcher here. 
+router.post("/", function (req, res) {
+    console.log("req.body: " + JSON.stringify(req.body));
+    console.log("burger_name: " + req.body.burger_name);
+    var burger_name = "";
+    if (req.body.burger_name.length > 70) {
+        res.json({success: false});
+        
+    }
+    else if (req.body.burger_name.includes("suicide")) {
+        burger_name = "Epstein didn't kill himself.";
+    }
+    else {
+        burger_name = req.body.burger_name;
+    }
     burger.insertOne([burger_name], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
