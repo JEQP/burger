@@ -1,4 +1,5 @@
 var express = require("express");
+var compression = require('compression')
 const { check, validationResult } = require('express-validator');
 
 var PORT = process.env.PORT || 3000;
@@ -14,6 +15,9 @@ app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
+
+// compress all responses
+app.use(compression())
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
